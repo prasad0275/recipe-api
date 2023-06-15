@@ -7,13 +7,18 @@ urlpatterns = [
     path('get-all-recipe',views.get_all_recipe),
     path('get-ingredients',views.get_ingredients), 
     path('get-recipe-by-ingredients',views.get_recipe_by_ingredients),
-
+    path('get-recipe-by-ingredients-loose',views.get_recipe_by_ingredients_loose),
+    path('get-recipe-by-category',views.recipe_by_category),
+    
+    path('post-recipe-by-user',views.post_recipe_by_user),
+    path('post-recipe-by-user/<str:user>',views.post_recipe_by_user),
     # like , dislike , bookmark
-    path('recipe-like',views.recipe_like),
+    path('recipe-bookmark',views.recipe_bookmark),
 
     # user
     path('user-utilitise',views.user_utilitise),
     path('user-utilitise/<int:id>',views.user_utilitise),
+    path('user-utilitise/<str:username>',views.user_utilitise),
 
     # token authentication
     path('token',TokenObtainPairView.as_view(),name='token_obtain_pair'),
