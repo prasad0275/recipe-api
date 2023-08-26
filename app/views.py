@@ -247,8 +247,7 @@ def user_utilitise(request,id=None,username=None):
         return Response(serializer.errors)
 
     if request.method == 'DELETE':
-        queryset = User.objects.get(id=id)
-        print(queryset)
+        queryset = User.objects.get(username=username)
         if queryset is not None:
             queryset.delete()
             return Response({'msg':'user is successfull deleted'},status=202)
